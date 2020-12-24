@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SecureHttpClient</name>
+    </assembly>
+    <members>
+        <member name="T:SecureHttpClient.Abstractions.IClientCertificateProvider">
+            <summary>
+            Interface for storing client certificates and private keys.
+            </summary>
+        </member>
+        <member name="T:SecureHttpClient.Abstractions.ISecureHttpClientHandler">
+            <summary>
+            Interface for SecureHttpClientHandler
+            </summary>
+        </member>
+        <member name="M:SecureHttpClient.Abstractions.ISecureHttpClientHandler.AddCertificatePinner(System.String,System.String[])">
+            <summary>
+            Add certificate pins for a given hostname
+            </summary>
+            <param name="hostname">The hostname</param>
+            <param name="pins">The array of certifiate pins (example of pin string: "sha256/fiKY8VhjQRb2voRmVXsqI0xPIREcwOVhpexrplrlqQY=")</param>
+        </member>
+        <member name="M:SecureHttpClient.Abstractions.ISecureHttpClientHandler.SetClientCertificates(SecureHttpClient.Abstractions.IClientCertificateProvider)">
+            <summary>
+            Set the client certificate provider
+            </summary>
+            <param name="provider">The provider for client certificates on this platform</param>
+        </member>
+        <member name="M:SecureHttpClient.Abstractions.ISecureHttpClientHandler.SetTrustedRoots(System.Byte[][])">
+            <summary>
+            Set certificates for the trusted Root Certificate Authorities
+            </summary>
+            <param name="certificates">Certificates for the CAs to trust</param>
+        </member>
+        <member name="T:SecureHttpClient.IClientCertificateProvider">
+            <summary>
+            IClientCertificateProvider for Portable .Net
+            </summary>
+        </member>
+        <member name="P:SecureHttpClient.IClientCertificateProvider.Certificates">
+            <summary>
+            The current collection of client certificates.
+            </summary>
+            <value>The certificates.</value>
+        </member>
+        <member name="T:SecureHttpClient.ClientCertificateProvider">
+            <summary>
+            Base Client certificate provider for Portable .Net
+            </summary>
+        </member>
+        <member name="P:SecureHttpClient.ClientCertificateProvider.Certificates">
+            <summary>
+            The current collection of client certificates.
+            </summary>
+            <value>The certificates.</value>
+        </member>
+        <member name="T:SecureHttpClient.ImportedClientCertificateProvider">
+            <summary>
+            Client certificate provider for imported certificates and keys.
+            </summary>
+        </member>
+        <member name="M:SecureHttpClient.ImportedClientCertificateProvider.Import(System.Byte[],System.String)">
+            <summary>
+            Import the specified certificate and its associated private key.
+            </summary>
+            <param name="certificate">The certificate and key, in PKCS12 format.</param>
+            <param name="passphrase">The passphrase that protects the private key.</param>
+        </member>
+        <member name="T:SecureHttpClient.SecureHttpClientHandler">
+            <summary>
+            Implementation of ISecureHttpClientHandler (NetStandard implementation)
+            </summary>
+        </member>
+        <member name="M:SecureHttpClient.SecureHttpClientHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SecureHttpClient.Abstractions.ISecureHttpClientHandler})">
+            <summary>
+            SecureHttpClientHandler constructor (NetStandard implementation)
+            </summary>
+            <param name="logger">Logger</param>
+        </member>
+        <member name="M:SecureHttpClient.SecureHttpClientHandler.AddCertificatePinner(System.String,System.String[])">
+            <summary>
+            Add certificate pins for a given hostname (NetStandard implementation)
+            </summary>
+            <param name="hostname">The hostname</param>
+            <param name="pins">The array of certifiate pins (example of pin string: "sha256/fiKY8VhjQRb2voRmVXsqI0xPIREcwOVhpexrplrlqQY=")</param>
+        </member>
+        <member name="M:SecureHttpClient.SecureHttpClientHandler.SetClientCertificates(SecureHttpClient.Abstractions.IClientCertificateProvider)">
+            <summary>
+            Set the client certificate provider (NetStandard implementation)
+            </summary>
+            <param name="provider">The provider for client certificates on this platform</param>
+        </member>
+        <member name="M:SecureHttpClient.SecureHttpClientHandler.SetTrustedRoots(System.Byte[][])">
+            <summary>
+            Set certificates for the trusted Root Certificate Authorities (NetStandard implementation)
+            </summary>
+            <param name="certificates">Certificates for the CAs to trust</param>
+        </member>
+    </members>
+</doc>
